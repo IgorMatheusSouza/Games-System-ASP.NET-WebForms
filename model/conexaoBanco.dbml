@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="sistemaJogos" Class="conexaoBancoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=USER-PC\SQLEXPRESS;Initial Catalog=sistemaJogos;Integrated Security=True" SettingsObjectName="model.Properties.Settings" SettingsPropertyName="sistemaJogosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.jogos" Member="jogos">
+    <Type Name="jogo">
+      <Column Name="idjogos" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="descricao" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="dtLancamentos" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="plataforma" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="preco" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="validacao" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="quantidade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="jogo_compra" Member="compras" ThisKey="idjogos" OtherKey="jogos_idjogos" Type="compra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.clientes" Member="clientes">
+    <Type Name="cliente">
+      <Column Name="idclientes" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="dtNascimento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="cpf" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="valorGasto" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="cliente_compra" Member="compras" ThisKey="idclientes" OtherKey="jogos_idjogos" Type="compra" />
+    </Type>
+  </Table>
+  <Table Name="dbo.compra" Member="compras">
+    <Type Name="compra">
+      <Column Name="idCompra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="jogos_idjogos" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="clientes_idclientes" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dtCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="quantidade" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valor" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="cliente_compra" Member="cliente" ThisKey="jogos_idjogos" OtherKey="idclientes" Type="cliente" IsForeignKey="true" />
+      <Association Name="jogo_compra" Member="jogo" ThisKey="jogos_idjogos" OtherKey="idjogos" Type="jogo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

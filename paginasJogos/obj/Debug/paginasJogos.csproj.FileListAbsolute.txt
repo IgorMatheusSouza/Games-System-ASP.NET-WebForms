@@ -1,0 +1,8 @@
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\obj\Debug\paginasJogos.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\bin\paginasJogos.dll.config
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\bin\paginasJogos.dll
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\bin\paginasJogos.pdb
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\bin\model.dll
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\bin\model.pdb
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\obj\Debug\paginasJogos.dll
+c:\users\user\documents\visual studio 2013\Projects\sistemaDeJogos\paginasJogos\obj\Debug\paginasJogos.pdb
