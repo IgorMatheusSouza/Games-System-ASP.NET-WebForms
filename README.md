@@ -1,2 +1,2 @@
 # Games-System-ASP.NET-WebForms
-Games management System in ASP.Net MVC programmed in C#
+Games management System programmed in C# (Old and abbandoned vewrsion)
